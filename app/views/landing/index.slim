@@ -1,0 +1,16 @@
+= content_tag :div, id: "products" do
+  p#notice = notice
+  .row
+    .col-md-1
+    .col-md-1
+      = render 'search'
+    .col-md-5.central-block
+      = render 'products'
+    .col-md-2
+      = render 'show'
+    .col-md-1
+  br
+  .row
+    .col-md-1
+    .col-md-11
+      = link_to 'API Documentation', api_docs_path, class: 'btn'

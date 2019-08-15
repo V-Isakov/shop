@@ -1,0 +1,37 @@
+.row
+  .col
+    h2.text-center Search
+
+.row
+  form
+    fieldset
+      legend Category
+      .row v-for="category in categories"
+        .col
+          label.checkbox
+            input @change="filter" type="checkbox" :id="category.category" v-model="category.checked" value="category.checked"
+            = '{{ category.category }}'
+
+.row
+  form
+    fieldset
+      legend Price
+      .row
+        .col
+          form.form-horizontal
+            .control-group
+              label class="control-label" for="min-price" From
+              .controls
+                input id="min-price" type="number" v-model="search.min_price" placeholder="Min price"
+            .control-group
+              label class="control-label" for="max-price" To
+              .controls
+                input id="max-price" type="number" v-model="search.max_price" placeholder="Max price"
+
+.row
+  form
+    fieldset
+      legend Sort by price
+      select v-model="sort.price"
+        option desc
+        option asc

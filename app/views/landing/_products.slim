@@ -1,0 +1,24 @@
+h2.text-center Products
+table.table
+  thead
+    tr
+      th Name
+      th Category
+      th Price
+  tbody
+    tr v-for="product in products"
+      td
+        a @click.prevent="show(product.id)" href="#"
+          = '{{ product.name }}'
+      td = '{{ product.category }}'
+      td = '{{ product.price }}'
+.row
+  .col-md-5
+  .pagination.col-md-4
+    ul
+      li
+        a @click="prevPage" :class="{ disabled: page == 1 }" <
+      li
+        a.disabled = '{{page}}'
+      li
+        a @click="nextPage" :class="{ disabled: page == total_pages }" >

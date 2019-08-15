@@ -1,0 +1,3 @@
+bundle exec rspec spec/controllers -f Dox::Formatter --order defined --tag dox --out docs.md
+
+aglio --include-path / -i docs.md -o docs.html
